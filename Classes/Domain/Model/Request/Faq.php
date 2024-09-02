@@ -17,7 +17,7 @@ class Faq extends AbstractRequest
     /**
      * Category.
      *
-     * @var QuestionCategory
+     * @var ?QuestionCategory
      */
     protected $category;
 
@@ -38,7 +38,7 @@ class Faq extends AbstractRequest
     /**
      * Set the category.
      */
-    public function setCategory(QuestionCategory $category): void
+    public function setCategory(?QuestionCategory $category): void
     {
         $this->category = $category;
     }
@@ -46,7 +46,7 @@ class Faq extends AbstractRequest
     /**
      * Get the category.
      */
-    public function getCategory(): QuestionCategory
+    public function getCategory(): ?QuestionCategory
     {
         return $this->category;
     }
@@ -56,7 +56,7 @@ class Faq extends AbstractRequest
      */
     public function setSearchWord(string $searchWord): void
     {
-        $this->searchWord = \trim((string)$searchWord);
+        $this->searchWord = trim($searchWord);
     }
 
     /**
@@ -64,7 +64,7 @@ class Faq extends AbstractRequest
      */
     public function getSearchWord(): string
     {
-        return \trim((string)$this->searchWord);
+        return trim((string)$this->searchWord);
     }
 
     public function getCategories(): array
